@@ -24,7 +24,7 @@ public class App {
 
         while (user != 7) {
             if (user == 1) {
-                BufferedReader ReadFile = new BufferedReader(new FileReader("EmployeeList.txt"));
+                BufferedReader ReadFile = new BufferedReader(new FileReader("Employee List\\EmployeeList.txt"));
                 while ((Line = ReadFile.readLine()) != null) {
                     EmpInfo.add(Line);
                 }
@@ -41,7 +41,7 @@ public class App {
             }
 
             if (user == 2) {
-                BufferedWriter WriteFile = new BufferedWriter(new FileWriter("EmployeeList.txt"));
+                BufferedWriter WriteFile = new BufferedWriter(new FileWriter("Employee List\\EmployeeList.txt"));
                 for (int intC = 0; intC < EmpInfo.size(); intC++) {
                     WriteFile.write(EmpInfo.get(intC));
                     WriteFile.newLine();
