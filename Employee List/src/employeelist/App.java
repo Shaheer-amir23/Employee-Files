@@ -24,7 +24,7 @@ public class App {
 
         while (user != 7) {
             if (user == 1) {
-                BufferedReader ReadFile = new BufferedReader(new FileReader("Employee List\\EmployeeList.txt"));
+                BufferedReader ReadFile = new BufferedReader(new FileReader("Employee-Files\\Employee List\\EmployeeList.txt"));
                 while ((Line = ReadFile.readLine()) != null) {
                     EmpInfo.add(Line);
                 }
@@ -41,7 +41,7 @@ public class App {
             }
 
             if (user == 2) {
-                BufferedWriter WriteFile = new BufferedWriter(new FileWriter("Employee List\\EmployeeList.txt"));
+                BufferedWriter WriteFile = new BufferedWriter(new FileWriter("Employee-Files\\Employee List\\EmployeeList.txt"));
                 for (int intC = 0; intC < EmpInfo.size(); intC++) {
                     WriteFile.write(EmpInfo.get(intC));
                     WriteFile.newLine();
@@ -59,16 +59,17 @@ public class App {
             }
 
             if (user == 3) {
-                System.out.println("\nInput Employee Number: ");
-                temp += input.next() + ",";
-                System.out.println("Input Employee Name: ");
-                temp += input.next() + ",";
-                System.out.println("Input Marital Status: ");
-                temp += input.next() + ",";
-                System.out.println("Input Age: ");
-                temp += input.next() + ",";
-                System.out.println("Input Salary: ");
-                temp += input.next() + ",";
+                temp += input.nextLine();
+                System.out.print("\nInput Employee Number: ");
+                temp += input.nextLine() + ",";
+                System.out.print("Input Employee Name: ");
+                temp += input.nextLine() + ",";
+                System.out.print("Input Marital Status: ");
+                temp += input.nextLine() + ",";
+                System.out.print("Input Age: ");
+                temp += input.nextLine() + ",";
+                System.out.print("Input Salary: ");
+                temp += input.nextLine() + ",";
                 EmpInfo.add(temp);
                 System.out.println("\n------File Added------\n");
                 System.out.println("1. Open File");
@@ -82,6 +83,7 @@ public class App {
             }
 
             if (user == 4) {
+                counter = 0;
                 System.out.println("\nWhich Record Would You Like To Remove?");
                 for (int i = 0; i < EmpInfo.size(); i++){
                     temp = EmpInfo.get(i);
