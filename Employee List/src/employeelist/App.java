@@ -5,14 +5,18 @@ import java.util.ArrayList;
 import java.io.BufferedReader;
 import java.util.Scanner;
 
+// Start of main class
 public class App {
+    // Start of main method
     public static void main(String[] args) throws Exception {
+        // variables
         int user, counter = 0, user2;
         ArrayList<String> EmpInfo = new ArrayList<>();
         String Line = "", temp = "", temporary = "";
         Scanner input = new Scanner(System.in);
         String [] titles = {"Employee#", "Employee Name", "Martial Status", "Age", "Salary"};
 
+        // Options for the user
         System.out.println("1. Open File");
         System.out.println("2. Save File");
         System.out.println("3. Add a Record");
@@ -22,6 +26,7 @@ public class App {
         System.out.println("7. Quit");
         user = input.nextInt();
 
+        // While loop to keep the program running until the user decides to quit
         while (user != 7) {
             if (user == 1) {
                 BufferedReader ReadFile = new BufferedReader(new FileReader("Employee-Files\\Employee List\\EmployeeList.txt"));
@@ -40,6 +45,7 @@ public class App {
                 user = input.nextInt();
             }
 
+            // Save the file
             if (user == 2) {
                 BufferedWriter WriteFile = new BufferedWriter(new FileWriter("Employee-Files\\Employee List\\EmployeeList.txt"));
                 for (int intC = 0; intC < EmpInfo.size(); intC++) {
@@ -58,6 +64,7 @@ public class App {
                 user = input.nextInt();
             }
 
+            // Add a record
             if (user == 3) {
                 temp += input.nextLine();
                 System.out.print("\nInput Employee Number: ");
@@ -81,7 +88,7 @@ public class App {
                 System.out.println("7. Quit");
                 user = input.nextInt();
             }
-
+            // Delete a record
             if (user == 4) {
                 counter = 0;
                 System.out.println("\nWhich Record Would You Like To Remove?");
@@ -113,6 +120,7 @@ public class App {
                 
             }
 
+            // Modify a record
             if (user == 5) {
                 temp = "";
                 counter = 0;
@@ -155,6 +163,7 @@ public class App {
             user = input.nextInt();
             }
 
+            // Display all records
             if (user == 6){
                 System.out.println();
                 for(int i = 0; i < titles.length; i++){
@@ -179,6 +188,6 @@ public class App {
             user = input.nextInt(); 
             }
         }
-        input.close();
-    }
-}
+        input.close(); // close the scanner
+    } // End of main method
+} // End of main class
